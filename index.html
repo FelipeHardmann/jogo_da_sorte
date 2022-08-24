@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 17 de JS</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body onLoad='gerarNumeroSecreto()'>
+    <main id="tela-inicial">
+        <div id='titulo'><h1>Adivinhar número secreto</h1></div>
+            <div class="card">
+                <div class="container">
+                    <p class='centro' id='dica'>Digite um número entre 1 e 10</p>
+                    <section class="conteudos">
+                        <input
+                            type="number"
+                            step="1"
+                            min="1"
+                            max="10"
+                            name="inputNumero"
+                            id="inputNumero"
+                            class="input animar"
+                        />
+                        <button
+                            id='btnChutar'
+                            class='botao'
+                            onClick="jogar()"    
+                        >Chutar</button>
+                        <br>
+                        
+                    </section>
+                    <p class='centro' id='aviso'></p>
+                </div>
+            </div>
+    </main>
+
+
+    <script src="/index.js"></script>
+</body>
+</html>

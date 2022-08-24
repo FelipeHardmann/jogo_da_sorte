@@ -1,0 +1,60 @@
+body{
+    background: linear-gradient(to right, rgb(93, 2, 146), rgb(255, 255, 255))
+}
+
+#titulo{
+    padding-bottom: 3rem;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container{
+    text-align: center;
+    padding-top: 80px;
+}
+   
+
+
+.btn{
+    padding-top: 90px;
+    padding-left: 70px;
+}
+
+
+input{
+    margin: 15px;
+    height: 20px;
+    width: 240px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 10px;
+    color: #250966; 
+}
+
+
+button{
+    background-color: blueviolet;
+    box-shadow: #250966 4px 4px 0px;
+    border-radius: 100px;
+    transition: transform 200ms, box-shadow 200ms;
+    width: 60px;
+    height: 40px;
+}
+
+button:active{
+    transform: translateY(4px) translateX(4px);
+    box-shadow: #250966 0px 0px 0px;
+}
