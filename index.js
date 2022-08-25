@@ -4,6 +4,7 @@ let contador = 1
 let min = 1
 let max = 10
 let situacao = ''
+let mistakeAcc = 0
 
 
 let inputNumero = document.querySelector('#inputNumero')
@@ -28,9 +29,6 @@ function validarNumeroDigitado(numero) {
 }
 
 
-function jogar() {
-    verificarSeAcertou()
-}
 
 function mensagemRapida(mensagem) {
     aviso.textContent = mensagem
@@ -51,13 +49,13 @@ function gameOver(situacao) {
         break
 
         case 'Chute maior':
-            mensagemRapida('Chute maior que o número secreto: ' + numeroSecreto)
+            mensagemRapida('Chute maior que o número secreto: ')
             aviso.classList.add('errou')
         break
 
         case 'Chute menor':
             aviso.classList.add('errou')
-            mensagemRapida('Chute menor que o número secreto: ' + numeroSecreto)
+            mensagemRapida('Chute menor que o número secreto: ')
         break
 
 
@@ -74,21 +72,27 @@ function verificarSeAcertou() {
         gameOver(situacao)
         gerarNumeroSecreto()
     } else if (chute > numeroSecreto) {
+        mistakeAcc++
         situacao = 'Chute maior'
         gameOver(situacao)
-        conta += 1
-        console.log(conta);
-        if(conta > 3){
+        if(mistakeAcc > 3){
             mensagemRapida('Você perdeu pois errou três vezes')
+            gerarNumeroSecreto()
+            mistakeAcc = 0
         }
     } else if (chute < numeroSecreto) {
+        mistakeAcc++
         situacao = 'Chute menor'
         gameOver(situacao)
-        conta += 1
-        console.log(conta);
-        if(conta > 3){
+        if(mistakeAcc > 3){
             mensagemRapida('Você perdeu pois errou três vezes')
+            gerarNumeroSecreto()
+            mistakeAcc = 0
         }
     }
     
+}
+
+function jogar() {
+    verificarSeAcertou()
 }
